@@ -1,7 +1,9 @@
 package mx.edu.itson.potros.practica6
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 
@@ -19,6 +21,13 @@ class detalle_pelicula : AppCompatActivity() {
             iv_pelicula_image.setImageResource(bundle.getInt("header"))
             tv_nombre_pelicula.setText(bundle.getString("titulo"))
             tv_desc_pelicula.setText(bundle.getString("sinopsis"))
+        }
+
+        val btnTicket: Button = findViewById(R.id.buyTickets)
+
+        btnTicket.setOnClickListener {
+            var intent: Intent = Intent(this, SeatSelection::class.java)
+            startActivity(intent)
         }
     }
 }
